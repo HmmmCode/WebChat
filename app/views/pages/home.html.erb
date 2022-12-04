@@ -1,0 +1,36 @@
+<div class="container awal">
+<% if current_user %>
+<div class="row mt-5">
+      <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+        <div class="card border-0 shadow rounded-3 my-5">
+          <div class="card-body p-4 p-sm-5">
+            <h5 class="card-title text-center mb-5 fw-light fs-5">Welcome</h5>
+            <div class="text-center">
+    <%= link_to "Start Chat", rooms_path, class: "text-center btn btn-primary justify-content-center" %>
+    </div>
+    <div class="text-center">
+    <%= button_to "Logout", destroy_user_session_path, method: :delete, class: "text-center btn btn-danger mt-3 justify-content-center  " %>
+    </div>
+    </div>
+        </div>
+      </div>
+    </div>
+<% else %>
+<div class="row mt-5">
+      <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+        <div class="card border-0 shadow rounded-3 my-5">
+          <div class="card-body p-4 p-sm-5">
+            <h5 class="card-title text-center mb-5 fw-light fs-5">Welcome</h5>
+               <div class="d-grid">
+                    <%= link_to "Login", new_user_session_path, class:"btn btn-primary btn-login text-uppercase fw-bold mb-2" %>
+               </div> 
+              <div class="d-grid">
+                    <%= link_to "Sign Up", new_user_registration_path, class:"text-center text-decoration-none text-body text-uppercase fw-bold" %>
+              </div>
+              <hr class="my-4">
+          </div>
+        </div>
+      </div>
+    </div>
+<% end %>
+</div>
